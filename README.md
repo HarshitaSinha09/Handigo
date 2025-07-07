@@ -33,6 +33,22 @@ To build an accessible computer interaction tool using hand gesture recognition 
 
 ---
 
+## 🧹 Data Preprocessing
+
+To prepare the hand landmark data for training the gesture recognition model:
+
+- 📷 Captured real-time video frames from webcam using OpenCV
+- ✋ Extracted 21 hand landmarks using Mediapipe (each with x, y coordinates)
+- 📐 Converted raw coordinates into **relative distances from the wrist (landmark 0)** to ensure scale invariance
+- 🔁 Normalized the coordinates between 0 and 1 for consistency across resolutions
+- 🔄 Performed basic data augmentation: 
+  - Horizontal flips
+  - Light rotation and shifts
+- 🧹 Removed background noise to improve gesture focus
+- 🧮 Stored processed data in `.csv` format:
+
+---
+
 ## 📈 Model Training & Evaluation
 
 - **Train-test split**: 80% training, 20% testing
